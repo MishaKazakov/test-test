@@ -1,0 +1,15 @@
+<table class="employee-table">
+  <tr class="employee-table__header">
+    <th>Имя</th>
+    <th>Фамилия</th>
+    <th>Действия</th>
+  </tr>
+  <tr *ngFor="let employee of employees" class="employee-table__row">
+    <td>{{ employee.firstName }}</td>
+    <td>{{ employee.lastName }}</td>
+    <td>
+      <button (click)="edit(employee.id)">Change</button>
+      <button (click)="delete(employee.id)">Delete</button>
+    </td>
+  </tr>
+</table>
