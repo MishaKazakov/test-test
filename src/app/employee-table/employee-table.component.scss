@@ -1,3 +1,37 @@
+@import "../shared//styles//respond-to.scss";
+
+:host {
+  @include respond-to(xs) {
+    display: inline-block;
+  }
+}
+
 .employee-table {
   width: 100%;
+}
+
+.mat-header-cell,
+.mat-cell {
+  padding: 0 5px;
+  @include respond-to(xs) {
+    font-size: 12px;
+  }
+}
+
+.mat-column-actions {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.mat-column-avatar {
+  width: 30px;
+  @include respond-to(xs) {
+    width: initial;
+  }
+}
+
+.create-person {
+  display: flex;
+  padding: 10px;
+  justify-content: flex-end;
 }

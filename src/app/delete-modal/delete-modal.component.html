@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Удалить {{ name }}?</h1>
+<div class="modal__buttons-wrapper">
+  <button
+    class="modal__button"
+    mat-raised-button
+    color="accent"
+    (click)="reject()"
+  >
+    Отменить
+  </button>
+  <button
+    class="modal__button"
+    mat-raised-button
+    cdkFocusInitial
+    color="primary"
+    (click)="confirm()"
+  >
+    Удалить
+  </button>
+</div>

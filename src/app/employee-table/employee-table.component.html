@@ -1,15 +1,45 @@
-<table class="employee-table">
-  <tr class="employee-table__header">
-    <th>Имя</th>
-    <th>Фамилия</th>
-    <th>Действия</th>
-  </tr>
-  <tr *ngFor="let employee of employees" class="employee-table__row">
-    <td>{{ employee.firstName }}</td>
-    <td>{{ employee.lastName }}</td>
-    <td>
-      <button (click)="edit(employee.id)">Change</button>
-      <button (click)="delete(employee.id)">Delete</button>
+<table mat-table [dataSource]="employees" class="employee-table">
+  <ng-container matColumnDef="avatar">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+      class="employee-table__avatar-header"
+    ></th>
+    <td mat-cell *matCellDef="let employee"><mat-icon>face</mat-icon></td>
+  </ng-container>
+
+  <ng-container matColumnDef="firstName">
+    <th mat-header-cell *matHeaderCellDef>Имя</th>
+    <td mat-cell *matCellDef="let employee">{{ employee.firstName }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef>Фамилия</th>
+    <td mat-cell *matCellDef="let employee">{{ employee.lastName }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+      class="employee-table__actions-header"
+    ></th>
+    <td mat-cell *matCellDef="let employee" class="">
+      <button mat-icon-button (click)="edit(employee)">
+        <mat-icon aria-label="Edit">edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="delete(employee)">
+        <mat-icon aria-label="delete">delete</mat-icon>
+      </button>
     </td>
-  </tr>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
+
+<div class="create-person">
+  <button mat-raised-button color="primary" (click)="create()">
+    Создать сотрудника
+  </button>
+</div>

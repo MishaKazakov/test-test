@@ -1,0 +1,24 @@
+{
+  "persons": [
+    {
+      "id": 3,
+      "firstName": "Всеслава",
+      "lastName": "Григорьева"
+    },
+    {
+      "firstName": "Mikhail",
+      "lastName": "Kazakov",
+      "id": 5
+    },
+    {
+      "firstName": "RRR",
+      "lastName": "KKK",
+      "id": 6
+    },
+    {
+      "firstName": "WWW",
+      "lastName": "SSS",
+      "id": 8
+    }
+  ]
+}

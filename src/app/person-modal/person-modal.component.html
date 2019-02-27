@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>{{ modalTitle }} сотрудника</h1>
+<form>
+  <mat-form-field class="modal__field">
+    <input
+      matInput
+      placeholder="Имя"
+      name="firstName"
+      [(ngModel)]="person.firstName"
+    />
+  </mat-form-field>
+  <mat-form-field class="modal__field">
+    <input
+      matInput
+      placeholder="Фамилия"
+      name="lastName"
+      [(ngModel)]="person.lastName"
+    />
+  </mat-form-field>
+  <div class="modal__buttons-wrapper">
+    <button
+      class="modal__button"
+      mat-raised-button
+      color="accent"
+      (click)="reject()"
+    >
+      Отменить
+    </button>
+    <button
+      class="modal__button"
+      mat-raised-button
+      cdkFocusInitial
+      color="primary"
+      (click)="confirm()"
+    >
+      {{ buttonName }}
+    </button>
+  </div>
+</form>
